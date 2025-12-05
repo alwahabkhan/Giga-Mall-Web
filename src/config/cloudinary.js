@@ -37,9 +37,12 @@ export const getCloudinaryUrl = (localPath, isVideo = false) => {
  * Helper function to get image URL from local path
  * Automatically detects if it's a video file
  * Checks imageMap first for custom mappings
+ * 
+ * IMPORTANT: If you're getting 404 errors, check your Cloudinary Media Library
+ * and add the correct URLs to the imageMap below.
  */
 export const getImageUrl = (localPath) => {
-  // Check if there's a specific mapping first
+  // Check if there's a specific mapping first (highest priority)
   if (imageMap[localPath]) {
     return imageMap[localPath];
   }
@@ -47,6 +50,19 @@ export const getImageUrl = (localPath) => {
   // Check if it's a video file
   const isVideo = /\.(mp4|webm|mov|avi)$/i.test(localPath);
   return getCloudinaryUrl(localPath, isVideo);
+};
+
+/**
+ * Debug helper - logs the generated URL (only in development)
+ * Use this to see what URLs are being generated
+ */
+export const debugCloudinaryUrl = (localPath) => {
+  if (import.meta.env.DEV) {
+    const url = getImageUrl(localPath);
+    console.log(`[Cloudinary] ${localPath} -> ${url}`);
+    return url;
+  }
+  return getImageUrl(localPath);
 };
 
 /**

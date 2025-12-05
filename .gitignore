@@ -28,7 +28,7 @@ dist-ssr
 *.sw?
 
 # Public folder
-public
+# public
 
 # Package lock file
 package-lock.json
