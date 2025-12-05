@@ -115,20 +115,6 @@ const Card = ({
               <source src={data.video} type="video/mp4" />
               Your browser does not support the video tag.
             </motion.video>
-            {showOverlay && (
-              <Box
-                sx={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  height: { xs: '100px', sm: '110px', md: '120px', lg: '130px' },
-                  background: 'linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.2) 70%, transparent 100%)',
-                  zIndex: 5,
-                  pointerEvents: 'none'
-                }}
-              />
-            )}
           </>
         ) : (
           <>
@@ -150,7 +136,8 @@ const Card = ({
                   left: 0,
                   right: 0,
                   height: { xs: '100px', sm: '110px', md: '120px', lg: '130px' },
-                  background: 'linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.2) 70%, transparent 100%)',
+                  // background: 'linear-gradient(to top, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.6) 40%, rgba(255, 255, 255, 0.3) 70%, transparent 100%)',
+                  background: 'linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.3) 70%, transparent 100%)',
                   zIndex: 5,
                   pointerEvents: 'none'
                 }}
@@ -171,7 +158,7 @@ const Card = ({
                   }
                 }}
               >
-                <img src="/logo-westfield.svg" alt="Westfield Logo" />
+                <img src="/Giga Mall_.png" alt="Giga Mall Logo" />
               </Box>
             )}
           </>
@@ -198,7 +185,7 @@ const Card = ({
               lineHeight: 1.2
             }}
           >
-            {data.category}
+            {isTrending ? 'Giga Mall' : data.category}
           </Typography>
 
           <Typography

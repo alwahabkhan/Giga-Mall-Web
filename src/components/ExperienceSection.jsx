@@ -145,14 +145,15 @@ const ExperienceSection = () => {
             fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem', lg: '5.5rem' },
             lineHeight: { xs: '1.2', md: '1.1' },
             textTransform: 'uppercase',
-            color: '#000000',
+            // color: '#000000',
+            color: '#D19F3B',
             letterSpacing: '0.02em',
             whiteSpace: 'pre-line'
           }}
         >
           {`900M VISITORS,
 71 SHOPPING CENTRES,
-11 COUNTRIES,
+2 CITIES,
 1 UNFORGETTABLE
 EXPERIENCE`}
         </Typography>

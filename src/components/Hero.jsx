@@ -6,23 +6,23 @@ const Hero = () => {
   const slides = [
     {
       image: '/4-WChodov-OK.jpg',
-      location: 'Westfield Chodov, CZ Republic'
+      location: 'Giga Mall First floor'
     },
     {
       image: '/1-WL_inside-_2732_x_1436_rijsgy-OK.jpg',
-      location: 'Westfield London, UK'
+      location: 'Giga Mall Second floor'
     },
     {
       image: '/2-ES---WLaMaquinista_OK.jpg',
-      location: 'Westfield La Maquinista, Spain'
+      location: 'Giga Mall Third floor'
     },
     {
       image: '/3-Mall-of-Scandinavia-OK.jpg',
-      location: 'Mall of Scandinavia, Sweden'
+      location: 'Giga Mall Fourth floor'
     },
     {
       image: '/ZWestfield-WTC-OK.jpg',
-      location: 'Westfield World Trade Center, USA'
+      location: 'Giga Mall Fifth floor'
     }
   ];
 
@@ -47,7 +47,7 @@ const Hero = () => {
       sx={{
         position: 'relative',
         width: '100%',
-        height: '100vh',
+        height: '93vh',
         minHeight: { xs: '500px', sm: '550px', md: '600px' },
         overflow: 'hidden',
         display: 'flex',
@@ -92,21 +92,22 @@ const Hero = () => {
         sx={{
           position: 'relative',
           zIndex: 3,
-          fontFamily: '"Anton", sans-serif',
+          fontFamily: '"High Summit", "Brush Script MT", cursive',
           fontStyle: 'normal',
           fontWeight: 400,
-          color: 'rgb(255, 255, 255)',
-          fontSize: { xs: '1.5rem', sm: '2.5rem', md: '4rem', lg: '5.5rem', xl: '88px' },
-          lineHeight: { xs: '1.2', sm: '1.15', md: '1.1', lg: '97px' },
+          // color: 'rgb(255, 255, 255)',
+          color: '#D19F3B',
+          fontSize: { xs: '2.4rem', sm: '3.4rem', md: '84px', lg: '94px', xl: '84px' },
+          lineHeight: { xs: '1.2', sm: '1.25', md: '1.3', lg: '132px', xl: '132px' },
           textAlign: 'center',
-          textTransform: 'uppercase',
-          textShadow: '2px 2px 8px rgba(0, 0, 0, 0.5)',
-          padding: { xs: '0 16px', sm: '0 20px', md: '0 40px' },
+          textTransform: 'none',
+          textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)',
+          padding: { xs: '0 16px', sm: '0 24px', md: '0 40px' },
           width: { xs: '90%', sm: '80%', md: '70%', lg: '60%', xl: '50%' },
           maxWidth: '900px',
         }}
       >
-        THERE'S A WESTFIELD WAITING FOR YOU!
+        Visit Giga Mall At Giga City DHA ISLAMABAD
       </Typography>
 
       <Box
@@ -133,7 +134,8 @@ const Hero = () => {
         >
           <Box
             sx={{
-              backgroundColor: '#000000',
+              // backgroundColor: '#000000',
+              backgroundColor: '#D19F3B',
               borderRadius: { xs: '16px', md: '20px' },
               display: 'flex',
               alignItems: 'center',

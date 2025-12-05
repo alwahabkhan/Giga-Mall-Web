@@ -20,43 +20,43 @@ const TrendingSection = () => {
     {
       image: '/Westfield_Days_2024_Tag-1_052_OK.jpg',
       category: 'WESTFIELD',
-      title: 'Westfield Days 2025: Where Future Meets Style',
+      title: 'Giga Mall Days 2025: Where Future Meets Style',
       dates: '1st October 2025 - 31st October 2025'
     },
     {
       image: '/3-Mall-of-Scandinavia-OK.jpg',
       category: 'WESTFIELD MALL OF SCANDINAVIA',
-      title: 'Westfield Mall of Scandinavia turns 10 and celebrates in style',
+      title: 'Giga Mall of Scandinavia turns 10 and celebrates in style',
       dates: '7th November 2025 - 16th November 2025'
     },
     {
       image: '/WESTFIELD_CENTURY_CITY_TAYLOR_SWIFT_2.jpg',
       category: 'WESTFIELD CENTURY CITY',
-      title: 'Inside the Taylor Swift Experience at Westfield Century City',
+      title: 'Inside the Taylor Swift Experience at Giga Mall Century City',
       dates: '3rd October 2025 - 9th October 2025'
     },
     {
       image: '/Jok_Air_4TEMPS_CNIT_carrousel_homepage_2732x1436px.jpg',
       category: 'WESTFIELD FORUM DES HALLES',
-      title: 'Art comes to shopping centres The Louvre x Westfield',
+      title: 'Art comes to shopping centres The Louvre x Giga Mall',
       dates: '21st March 2025 - 1st November 2025'
     },
     {
       image: '/20241019_WestfieldDays-JoniIsraeli-053-SWR60051-retouche-OK.jpg',
       category: 'WESTFIELD',
-      title: 'Westfield Days 2024: Celebrating Style and Innovation',
+      title: 'Giga Mall Days 2024: Celebrating Style and Innovation',
       dates: '1st September 2024 - 30th September 2024'
     },
     {
       image: '/1-WL_inside-_2732_x_1436_rijsgy-OK.jpg',
       category: 'WESTFIELD LONDON',
-      title: 'Discover the Ultimate Shopping Experience at Westfield London',
+      title: 'Discover the Ultimate Shopping Experience at Giga Mall',
       dates: '1st January 2025 - 31st December 2025'
     },
     {
       image: '/2-ES---WLaMaquinista_OK.jpg',
       category: 'WESTFIELD LA MAQUINISTA',
-      title: 'Experience Spanish Style at Westfield La Maquinista',
+      title: 'Experience Spanish Style at Giga Mall La Maquinista',
       dates: '1st January 2025 - 31st December 2025'
     },
     {
@@ -68,19 +68,19 @@ const TrendingSection = () => {
     {
       image: '/ZWestfield-WTC-OK.jpg',
       category: 'WESTFIELD WORLD TRADE CENTER',
-      title: 'Shop at the Heart of New York: Westfield WTC',
+      title: 'Shop at the Heart of New York: Giga Mall WTC',
       dates: '1st January 2025 - 31st December 2025'
     },
     {
       image: '/Westfield_Shopping_City_Sud_-_Sunset_Sound_-_2025.jpg',
       category: 'WESTFIELD SHOPPING CITY SUD',
-      title: 'Sunset Sound: Music and Shopping at Westfield',
+      title: 'Sunset Sound: Music and Shopping at Giga Mall',
       dates: '15th August 2025 - 30th September 2025'
     },
     {
       image: '/Montage_-_Homepage_-_30sec_v11.jpg',
       category: 'WESTFIELD',
-      title: 'Westfield Moments: Capturing Life\'s Best Experiences',
+      title: 'Giga Mall Moments: Capturing Life\'s Best Experiences',
       dates: '1st January 2025 - 31st December 2025'
     }
   ];
@@ -131,7 +131,7 @@ const TrendingSection = () => {
   const displayItems = shouldShowVideoCard 
     ? [
         {
-          video: '/6090546-hd_1920_1080_30fps.mp4',
+          video: '/gigamallvideo.mp4',
           isVideo: true
         },
         ...trendingItems
@@ -171,9 +171,9 @@ const TrendingSection = () => {
       <Typography
         variant="h2"
         sx={{
-          fontFamily: '__Anton_8d0e64, "Anton", sans-serif',
+          fontFamily: '"Jost", "Mulish", system-ui, sans-serif',
           fontStyle: 'normal',
-          fontWeight: 400,
+          fontWeight: 700,
           fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem', xl: '3.5rem' },
           textTransform: 'uppercase',
           textAlign: { xs: 'center', md: 'left' },
@@ -181,11 +181,12 @@ const TrendingSection = () => {
           marginTop: { xs: '20px', sm: '24px', md: '40px' },
           paddingLeft: { xs: '16px', sm: '20px', md: '40px', lg: '130px' },
           paddingRight: { xs: '16px', sm: '20px', md: '40px' },
-          color: '#000000',
-          letterSpacing: '0.02em'
+          // color: '#000000',
+          color: '#D19F3B',
+          // letterSpacing: '0.02em'
         }}
       >
-        TRENDING AT WESTFIELD
+        TRENDINGS AT GIGA MALL
       </Typography>
 
       <Box

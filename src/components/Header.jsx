@@ -26,7 +26,7 @@ const Header = () => {
   const shouldBeTransparent = isSmallScreen ? true : isTransparent;
 
   return (
-      <AppBar 
+    <AppBar 
       position="fixed"
       top={0}
       sx={{ 
@@ -39,9 +39,10 @@ const Header = () => {
         borderBottom: 'none',
         zIndex: '9999 !important',
         width: '100%',
-        maxWidth: '100%',
+        maxWidth: '100vw',
         margin: 0,
         padding: 0,
+        overflow: 'hidden',
         transition: isSmallScreen ? 'none' : 'background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
         backdropFilter: shouldBeTransparent ? 'none' : 'blur(0px)',
         display: 'block',
@@ -54,57 +55,83 @@ const Header = () => {
     >
       <Toolbar sx={{ 
         justifyContent: 'space-between',
-        padding: { xs: '0 16px', sm: '0 20px', md: '0 24px' },
-        minHeight: { xs: '60px !important', md: '80px !important' }
+        padding: shouldBeTransparent 
+          ? { xs: '40px 12px 0 12px', sm: '48px 16px 0 16px', md: '56px 24px 0 24px' }
+          : { xs: '0 12px', sm: '0 16px', md: '0 24px' },
+        minHeight: { xs: '60px !important', md: '80px !important' },
+        transition: 'padding 0.3s ease-in-out',
+        width: '100%',
+        maxWidth: '100%',
+        overflow: 'hidden',
+        boxSizing: 'border-box'
       }}>
-        <Box 
-          component="img"
-          src="/logo-westfield.svg"
-          alt="Westfield"
-          sx={{ 
-            height: { xs: '28px', sm: '32px', md: '40px' },
-            cursor: 'pointer',
-            userSelect: 'none',
-            flexShrink: 0
-          }}
-        />
+        {/* Show logo on small screens always, on larger screens only when white background */}
+        {(isSmallScreen || !shouldBeTransparent) && (
+          <Box 
+            component="img"
+            src='/Giga Mall_.png'
+            alt="Giga Mall"
+            sx={{ 
+              height: { xs: '36px', sm: '44px', md: '56px', lg: '60px' },
+              width: { xs: 'auto', sm: 'auto', md: 'auto' },
+              maxWidth: { xs: '120px', sm: '140px', md: '180px' },
+              cursor: 'pointer',
+              userSelect: 'none',
+              flexShrink: 1,
+              transition: 'opacity 0.3s ease-in-out',
+              opacity: 1,
+              objectFit: 'contain'
+            }}
+          />
+        )}
+
+        {/* Empty box to maintain spacing when logo is hidden (only on large screens when transparent) */}
+        {!isSmallScreen && shouldBeTransparent && (
+          <Box sx={{ flexShrink: 0 }} />
+        )}
 
         {isSmallScreen ? (
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, sm: 2 }, flexShrink: 0 }}>
+          <Box sx={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: { xs: 1, sm: 1.5 }, 
+            flexShrink: 0,
+            minWidth: 0
+          }}>
             <IconButton
               sx={{
-                backgroundColor: '#d32f2f',
+                backgroundColor: '#D19F3B',
                 color: '#ffffff',
                 borderRadius: '50%',
-                padding: { xs: '10px' },
+                padding: { xs: '8px' },
                 display: 'flex',
                 flexShrink: 0,
-                minWidth: { xs: '44px' },
-                minHeight: { xs: '44px' },
-                width: { xs: '44px' },
-                height: { xs: '44px' },
+                minWidth: { xs: '40px' },
+                minHeight: { xs: '40px' },
+                width: { xs: '40px' },
+                height: { xs: '40px' },
                 '&:hover': {
-                  backgroundColor: '#b71c1c',
+                  backgroundColor: '#D19F3B',
                 },
               }}
             >
               <Public sx={{ 
-                fontSize: { xs: '22px' },
+                fontSize: { xs: '20px' },
                 display: 'block'
               }} />
             </IconButton>
 
             <IconButton
               sx={{
-                border: '1px solid #000000',
+                border: '1px solid #D19F3B',
                 borderRadius: { xs: '28px' },
-                padding: { xs: '8px' },
+                padding: { xs: '6px' },
                 display: 'flex',
                 flexShrink: 0,
-                minWidth: { xs: '44px' },
-                minHeight: { xs: '44px' },
-                width: { xs: '44px' },
-                height: { xs: '44px' },
+                minWidth: { xs: '40px' },
+                minHeight: { xs: '40px' },
+                width: { xs: '40px' },
+                height: { xs: '40px' },
                 backgroundColor: 'transparent',
                 visibility: 'visible',
                 opacity: 1,
@@ -114,8 +141,8 @@ const Header = () => {
               }}
             >
               <AccountCircle sx={{ 
-                color: '#000000', 
-                fontSize: { xs: '24px' },
+                color: '#D19F3B', 
+                fontSize: { xs: '22px' },
                 display: 'block',
                 visibility: 'visible',
                 opacity: 1
@@ -128,7 +155,7 @@ const Header = () => {
               variant="contained"
               endIcon={<Public />}
               sx={{
-                backgroundColor: '#d32f2f',
+                backgroundColor: '#D19F3B',
                 color: '#ffffff',
                 borderRadius: '28px',
                 padding: { sm: '10px 16px', md: '10px 20px' },
@@ -136,16 +163,16 @@ const Header = () => {
                 fontSize: { sm: '14px', md: '16px' },
                 fontWeight: 500,
                 '&:hover': {
-                  backgroundColor: '#b71c1c',
+                  backgroundColor: '#b5832f',
                 },
               }}
             >
-              Find your Westfield centre
+              Find your Favourite Brand at Giga Mall
             </Button>
 
             <IconButton
               sx={{
-                border: shouldBeTransparent ? '1px solid #ffffff' : '1px solid #000000',
+                border: shouldBeTransparent ? '1px solid #D19F3B' : '1px solid #D19F3B',
                 borderRadius: '28px',
                 padding: { sm: '8px' },
                 display: 'flex',
@@ -158,7 +185,7 @@ const Header = () => {
               }}
             >
               <AccountCircle sx={{ 
-                color: shouldBeTransparent ? '#ffffff' : '#000000', 
+                color: shouldBeTransparent ? '#D19F3B' : '#D19F3B', 
                 fontSize: { sm: '26px', md: '28px' },
                 display: 'block'
               }} />
@@ -171,4 +198,3 @@ const Header = () => {
 };
 
 export default Header;
-
